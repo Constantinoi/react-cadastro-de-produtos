@@ -36,10 +36,10 @@ export default class ConsultaProdutos extends React.Component{
                         </thead>
                         <tbody>
                         {
-                            this.state.produtos.map(produto =>{
+                            this.state.produtos.map((produto, index) =>{
    
                                return(
-                                    <tr>
+                                    <tr key={index}>
                                         <th>{produto.nome}</th>
                                         <th>{produto.sku}</th>
                                         <th>{produto.preco}</th>

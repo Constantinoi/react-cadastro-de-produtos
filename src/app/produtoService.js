@@ -17,7 +17,7 @@ export default class ProdutoService {
         if(!produto.preco || produto.preco <= 0){
             errors.push('O campo Preço deve ter um valor maior que zero')
         }
-        if(!produto.forncedor){
+        if(!produto.fornecedor){
             errors.push('O campo Fornecedor é obrigatorio')
         }
 

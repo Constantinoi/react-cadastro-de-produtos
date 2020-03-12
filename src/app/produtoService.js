@@ -28,10 +28,13 @@ export default class ProdutoService {
 
     obterProdutos = ()=>{
         const produtos = localStorage.getItem(PRODUTOS)
+        if(!produtos){
+            return [];
+        }
         return JSON.parse(produtos)
     }
 
-    obterIndex =(sku)=>{
+    obterIndex = (sku) =>{
      let index = null;
      this.obterProdutos().forEach( (produto,i) => {
          if(produto.sku === sku){
@@ -53,7 +56,7 @@ export default class ProdutoService {
           produtos = JSON.parse(produtos)
       }
       const index = this.obterIndex(produto.sku)
-       console.log(produto.sku,'produto')
+       console.log(this.obterIndex(produto.sku),'meu teste')
     
       if(index === null){
           produtos.push(produto);
